@@ -1,0 +1,37 @@
+#DO OR DIE LIST
+File explorer
+Brainless copy paste
+DO THIS NEXT Highlight text
+Git stuff
+Open two files two tabs at the same time
+Tab between files?
+
+--------------
+
+
+
+nvim .
+Opens a file explorer!
+
+:Lazy
+Dumb case sensitive.
+
+
+
+So it looks like you can either:
+	Have a plugins directory with a whole bunch of individual files for each plugin.
+	Have a plugins directory with a single file (mine is called /plugins/init.lua) and list all the plugins in a table.
+From there, you have to require it from /nvim/init.lua. It also looks like there's configuration or setup junk that you can mess with.
+
+
+https://youtu.be/6mxWayq-s9I?t=540
+
+config = function()
+	stuff goes here
+	end
+
+
+
+neotree
+ctrl+w+h
+ctrl+w+l
