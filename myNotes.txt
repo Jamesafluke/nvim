@@ -1,12 +1,12 @@
 #DO OR DIE LIST
-File explorer
-Brainless copy paste
-DO THIS NEXT Highlight text
+DONE File explorer
+DONE Brainless copy paste
 Git stuff
 Open two files two tabs at the same time
 Tab between files?
+Terminal!
 
---------------
+----------------
 
 
 
@@ -16,6 +16,28 @@ Opens a file explorer!
 :Lazy
 Dumb case sensitive.
 
+P - paste before cursor
+p - paste after cursor
+
+d - delete text
+c - delete text and insert mode
+
+yy - yank line of text
+
+
+In vim # means the alternate file
+
+
+
+Selection Registers
+For copy pasting!
+Vim has two selection registers: quotestar "* and quoteplus "+
+So you can enter Visual, select something, "*y
+
+
+OR I THINK THIS IS BETTER
+set clipboard=unnamed
+lets you use the unnamed clipboard (p) to paste. Try this next.
 
 
 So it looks like you can either:
