@@ -1,10 +1,11 @@
 #DO OR DIE LIST
 DONE File explorer
 DONE Brainless copy paste
-Git stuff
+Git stuff?
 Open two files two tabs at the same time
 Tab between files?
-Terminal!
+DONE Terminal!
+DONE Relative line numbers
 
 ----------------
 
