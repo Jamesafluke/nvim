@@ -9,13 +9,23 @@ DONE Relative line numbers
 
 ----------------
 
+Tabs!
+:tabe - open new tab.
+:tabe file.txt
+gt 
+gT
+:tabc - close
 
 
+
+NeoTree
 nvim .
-Opens a file explorer!
+:NvimTreeOpen
+neotree
+ctrl+w+h
+ctrl+w+l
 
 :Lazy
-Dumb case sensitive.
 
 P - paste before cursor
 p - paste after cursor
@@ -55,6 +65,3 @@ config = function()
 
 
 
-neotree
-ctrl+w+h
-ctrl+w+l

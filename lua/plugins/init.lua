@@ -32,5 +32,8 @@ return {
 	},
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    },
+    {
+	'akinsho/toggleterm.nvim', version = "*", config = true
     }
 }
