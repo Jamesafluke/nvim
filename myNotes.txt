@@ -4,6 +4,9 @@ DONE Remap keys in nvimTree
 Figure out Telescope.
 DONE Remap capital L (To be same as I) since I need I as left.
 Format on write?
+Open two files two tabs at the same time
+Tab between files?
+
 
 
 
@@ -13,8 +16,6 @@ USE A FUZZY FINDER
 DONE File explorer
 DONE Brainless copy paste
 Git stuff?
-Open two files two tabs at the same time
-Tab between files?
 DONE Terminal!
 DONE Relative line numbers
 
@@ -28,15 +29,12 @@ gT
 :tabc - close
 
 
-
 NeoTree
 nvim .
 :NvimTreeOpen
 neotree
 ctrl+w+h
 ctrl+w+l
-
-:Lazy
 
 P - paste before cursor
 p - paste after cursor
@@ -50,29 +48,12 @@ yy - yank line of text
 In vim # means the alternate file
 
 
+=G - Format!
 
-Selection Registers
-For copy pasting!
-Vim has two selection registers: quotestar "* and quoteplus "+
-So you can enter Visual, select something, "*y
-
-
-OR I THINK THIS IS BETTER
-set clipboard=unnamed
-lets you use the unnamed clipboard (p) to paste. Try this next.
-
-
-So it looks like you can either:
-	Have a plugins directory with a whole bunch of individual files for each plugin.
-	Have a plugins directory with a single file (mine is called /plugins/init.lua) and list all the plugins in a table.
-From there, you have to require it from /nvim/init.lua. It also looks like there's configuration or setup junk that you can mess with.
 
 
 https://youtu.be/6mxWayq-s9I?t=540
 
-config = function()
-	stuff goes here
-	end
 
 
 
