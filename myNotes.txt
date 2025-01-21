@@ -1,3 +1,14 @@
+Working list:
+DONE Get a better filestructure.
+DONE Remap keys in nvimTree
+Figure out Telescope.
+DONE Remap capital L (To be same as I) since I need I as left.
+Format on write?
+
+
+
+USE A FUZZY FINDER
+
 #DO OR DIE LIST
 DONE File explorer
 DONE Brainless copy paste
