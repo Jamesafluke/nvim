@@ -1,3 +1,5 @@
+
+
 return {
     {
         'nvim-telescope/telescope.nvim',
@@ -7,9 +9,11 @@ return {
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
         },
         config = function()
-            vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+            vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 
 
-            end
+        end
     },
 }

@@ -1,23 +1,37 @@
+pwd
+
+
+Additional toys to check out:
+Comment.nvim - Eary Shortcut for commenting lines
+vim-illuminate - highlights all instances of word under cursor
+nvim-autopairs - Automatically pair for brackets and quotes
+horizontal mouse scroll
+Git functionality. I don't want to have to quit nvim to Git.
+Change the background or text color based on what file it is. 
+    I might want my daily notes to be a specific color so I can easily see alt tab.
+Whaat if I change background color based on mode?
+
+
+
+
 Working list:
-DONE Get a better filestructure.
-DONE Remap keys in nvimTree
-Figure out Telescope.
-DONE Remap capital L (To be same as I) since I need I as left.
-Format on write?
-Open two files two tabs at the same time
-Tab between files?
-
-
-
-
-USE A FUZZY FINDER
-
-#DO OR DIE LIST
 DONE File explorer
 DONE Brainless copy paste
 Git stuff?
 DONE Terminal!
 DONE Relative line numbers
+DONE Get a better filestructure.
+DONE Remap keys in nvimTree
+DONE Figure out Telescope.
+DONE Remap capital L (To be same as I) since I need I as left.
+Format on write?
+DONE Open two files two tabs at the same time
+Terminal in the bottom
+NEED to be able to make changes in the file tree. Create, mkdir, delete, rename.
+Nah, don't need this. Tree sitter DUN DUN DUN
+Harpoon looks awesome.
+DONE YAY I FIXED THE DUMB MODIFIABLE
+I need a way to bounce into a directory fast. For example, jump to Code fast from nconf. Or to a directory in Code.
 
 ----------------
 
@@ -44,6 +58,13 @@ c - delete text and insert mode
 
 yy - yank line of text
 
+viw - select a word
+
+cw - delete a word, enter Insert
+
+Remember Ctrl D and Ctrl U
+
+:so - source a file!
 
 In vim # means the alternate file
 

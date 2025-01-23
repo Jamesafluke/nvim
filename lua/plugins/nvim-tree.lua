@@ -1,44 +1,43 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
---This function to unmap e (since it's one of my arrow keys).
-local function my_on_attach(bufnr)
-    local api = require("nvim-tree.api")
-
-    local function opts(desc)
-        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-    end
-    -- Remove a default keymap
-    local success, _ = pcall(vim.api.nvim_buf_del_keymap, bufnr, "n", "e")
-    if not success then
-        print("")
-    end
-    vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
-end
-
-
-
-
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
 
 
 
 return {
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        opts = {
-            -- View settings
-            view = {
-                side = "right", -- Set the tree view to the right side
-            },
-            -- Filters to hide certain files/folders
-            filters = {
-                custom = { "^.git$" }, -- Hide .git folder
-            },
-            -- Pass the on_attach function to nvim-tree setup
-            on_attach = my_on_attach,
-        },
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
     },
+
+    config = function()
+        local function my_on_attach(bufnr)
+            local api = require("nvim-tree.api")
+            local function opts(desc)
+                return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+            end
+            api.config.mappings.default_on_attach(bufnr)
+            vim.keymap.del("n", "e", { buffer = bufnr })
+        end
+
+        require("nvim-tree").setup({
+            on_attach = my_on_attach,
+            sort = {
+                sorter = "case_sensitive",
+            },
+            view = {
+                width = 30,
+            },
+            renderer = {
+                group_empty = true,
+            },
+            filters = {
+                dotfiles = true,
+            },
+        })
+    end
 }
