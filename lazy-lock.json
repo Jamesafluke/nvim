@@ -9,5 +9,6 @@
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "today.nvim": { "branch": "main", "commit": "e9fb7f53cfa27d1da7fdb67de4bcba65ca02dc34" },
   "toggleterm.nvim": { "branch": "main", "commit": "e76134e682c1a866e3dfcdaeb691eb7b01068668" },
+  "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-nightfly-guicolors": { "branch": "master", "commit": "1105d1b755ba59df2dc663f68e0c8228ded2afe9" }
 }

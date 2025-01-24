@@ -35,6 +35,8 @@ require("lazy").setup({
     { import = "plugins.telescope" },
     { import = "plugins.today" },
     { import = "plugins.toggleterm" },
+    { import = "plugins.vim-illuminate" },
+
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

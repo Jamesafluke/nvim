@@ -3,7 +3,6 @@ pwd
 
 Additional toys to check out:
 Comment.nvim - Eary Shortcut for commenting lines
-vim-illuminate - highlights all instances of word under cursor
 nvim-autopairs - Automatically pair for brackets and quotes
 horizontal mouse scroll
 Git functionality. I don't want to have to quit nvim to Git.
@@ -32,6 +31,10 @@ Nah, don't need this. Tree sitter DUN DUN DUN
 Harpoon looks awesome.
 DONE YAY I FIXED THE DUMB MODIFIABLE
 I need a way to bounce into a directory fast. For example, jump to Code fast from nconf. Or to a directory in Code.
+I read that Telescope can show files in a directory.
+    Mine is confusing - I can't tell where it's able to search.
+DONE vim-illuminate - highlights all instances of word under cursor
+Configure vim-illuminate to cycle forward and backward.
 
 ----------------
 
@@ -74,6 +77,36 @@ In vim # means the alternate file
 
 
 https://youtu.be/6mxWayq-s9I?t=540
+
+
+
+
+Some Lua Notes:
+config = functino() block is a Lua function used in Neovim's plugin configuration,
+particlarly when managing plugins with a plugin manager.
+It defines a setup function that runs after the plugin is loaded, allowing you to configure behavior
+- Set up key mappings.
+- plugin-specific options
+- Initialization for the plu5gin to work properly
+
+
+require("someplugin")
+    Loades the module named someplugin
+    typically, someplugin corresponds to the name of the plugin or its Lua entry point
+
+Plugin managers like Lazy support an opts field, which automatically passes the options to a plugin's setup() function if the plugin exporer one.
+    This eliminates the need for a confog block when the config is straghtforward.
+    The plugin manager detects the opts field ant automatically calls
+        require("toggleterm").setup(opts)
+
+Typically, config = function() is only needed for custom logic or complex stuff including custom commands, set keymaps, or talk to other plugins.
+
+Best practices:
+    Use opts when possible.(Which I should because Lazy supports it.)
+    If the plugin's setup can be handled with a single setup() call, prefer opts for simplicity..
+Use config (fonfig = function()) for logic, keybindings, or talking to other plugins.
+
+Some plugins require setup() to be called in a config block, while other work fine with opts. See plugin's docs.
 
 
 
