@@ -2,6 +2,7 @@ pwd
 
 
 Additional toys to check out:
+Harpooooooooon!!
 Comment.nvim - Eary Shortcut for commenting lines
 nvim-autopairs - Automatically pair for brackets and quotes
 horizontal mouse scroll
