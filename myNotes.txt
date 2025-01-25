@@ -47,6 +47,14 @@ gT
 :tabc - close
 
 
+Searching Kung Foo
+* to search word under cursor.
+If you want to search again using the previous search pattern, // is your friend.
+:s/pattern/replace/g - Substitute “pattern” by “replace” on the current line.
+:%s/pattern/replace/g - Substitute “pattern” by “replace” in the current file.
+
+
+
 NeoTree
 nvim .
 :NvimTreeOpen

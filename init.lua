@@ -97,6 +97,7 @@ require("lazy").setup({
         { import = "plugins.today" },
         { import = "plugins.toggleterm" },
         { import = "plugins.vim-illuminate" },
+        { import = "plugins.fugitive" },
         { import = "plugins.harpoon" },
 
     },
