@@ -16,7 +16,7 @@ Whaat if I change background color based on mode?
 Working list:
 DONE File explorer
 DONE Brainless copy paste
-Git stuff?
+DONE Git stuff?
 DONE Terminal!
 DONE Relative line numbers
 DONE Get a better filestructure.

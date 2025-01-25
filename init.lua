@@ -1,6 +1,6 @@
 --Maybe look at kickstart.nvim
 
---require("plugins.init")
+local kinesis = false
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -60,9 +60,7 @@ require("lazy").setup({
 
     vim.g.mapleader = " "
 
-    vim.api.nvim_create_user_command("Te", "ToggleTerm", {})
-    vim.api.nvim_create_user_command("Tree", "NvimTreeOpen", {})
-        vim.api.nvim_create_user_command("Tele", "Telescope", {})
+    vim.api.nvim_create_user_command("Tele", "Telescope", {})
     vim.keymap.set('n', '<leader>e', ":NvimTreeToggle<cr>", opts)
 
     --One that lets me select and move lines up and down.
@@ -77,27 +75,28 @@ require("lazy").setup({
     --Kinesis Keyboard Stuff!
     local opts = { noremap = true, silent = true }
 
-    -- Normal mode
-    vim.api.nvim_set_keymap('n', 'h', '<Left>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'n', '<Down>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'e', '<Up>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'i', '<Right>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'l', 'i', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'm', 'n', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', 'L', 'I', { noremap = true, silent = true })
+    if kinesis then
+        
+        -- Normal mode
+        vim.api.nvim_set_keymap('n', 'h', '<Left>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'n', '<Down>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'e', '<Up>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'i', '<Right>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'l', 'i', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'm', 'n', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('n', 'L', 'I', { noremap = true, silent = true })
 
-    -- Visual mode
-    vim.api.nvim_set_keymap('v', 'h', '<Left>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'n', '<Down>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'e', '<Up>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'i', '<Right>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'l', 'i', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'm', 'n', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('v', 'L', 'I', { noremap = true, silent = true })
+        -- Visual mode
+        vim.api.nvim_set_keymap('v', 'h', '<Left>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'n', '<Down>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'e', '<Up>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'i', '<Right>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'l', 'i', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'm', 'n', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap('v', 'L', 'I', { noremap = true, silent = true })
 
-    -- For navigating split view:
-    -- However, this doesn't work at all. For now I'll try using Ctrl+w+w to navigate.
-    -- https://neovim.io/doc/user/usr_08.html
-    vim.api.nvim_set_keymap('n', '<C-w>n', '<C-w><j>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C-w>e', '<C-w><k>', { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<C-w>i', '<C-w><l>', { noremap = true, silent = true })
+    else 
+        
+
+
+    end
