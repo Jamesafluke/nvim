@@ -1,8 +1,8 @@
 pwd
 
+Lua, yaml, bicep, terraform lsp!
 
 Additional toys to check out:
-Harpooooooooon!!
 Comment.nvim - Eary Shortcut for commenting lines
 nvim-autopairs - Automatically pair for brackets and quotes
 horizontal mouse scroll
@@ -15,6 +15,7 @@ Whaat if I change background color based on mode?
 
 
 Working list:
+DONE Harpooooooooon!!
 DONE File explorer
 DONE Brainless copy paste
 DONE Git stuff?
@@ -29,7 +30,7 @@ DONE Open two files two tabs at the same time
 Terminal in the bottom
 NEED to be able to make changes in the file tree. Create, mkdir, delete, rename.
 Nah, don't need this. Tree sitter DUN DUN DUN
-Harpoon looks awesome.
+DONE Harpoon looks awesome.
 DONE YAY I FIXED THE DUMB MODIFIABLE
 I need a way to bounce into a directory fast. For example, jump to Code fast from nconf. Or to a directory in Code.
 I read that Telescope can show files in a directory.

@@ -1,6 +1,6 @@
 --Maybe look at kickstart.nvim
 
-local kinesis = true
+local kinesis = false
 
 
 vim.opt.signcolumn = 'yes'
@@ -99,6 +99,7 @@ require("lazy").setup({
         { import = "plugins.vim-illuminate" },
         { import = "plugins.fugitive" },
         { import = "plugins.harpoon" },
+        { import = "plugins.zerolsp" },
 
     },
     -- Configure any other settings here. See the documentation for more details.
