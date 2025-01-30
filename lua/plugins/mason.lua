@@ -8,9 +8,6 @@
     --Linters: null-ls.nvim or nvim-lint
     --Formatters: null-ls.nvim or formatter.nvim
 
-
-
-
 return{
     "williamboman/mason.nvim",
     opts = {

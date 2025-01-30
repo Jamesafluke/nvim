@@ -31,6 +31,14 @@ return{
         lspconfig.terraformls.setup({
         })
         lspconfig.powershell_es.setup({
+            filetypes = {"ps1", "psm1", "psd1"},
+            bundle_path = "C:/Users/v-jfluckiger/AppData/Local/nvim-data/mason/packages/powershell-editor-services",
+            --bundle_path = "C:\Users\v-jfluckiger\AppData\Local\nvim-data\mason\packages\powershell-editor-services",
+            settings = {powershell = { codeFormatting = { Preset = 'OTBS' } } },
+            init_options = {
+                enableProfileLoading = false,
+            },
+
         })
     end
 }

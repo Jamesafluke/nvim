@@ -16,7 +16,7 @@ return {
 
         vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-N>]], { noremap = true, silent = true })
 
-        vim.keymap.set("n", "<leader>s", function()
+        vim.keymap.set("n", "<F5>", function()
             vim.cmd("ToggleTermSendCurrentLine")
         end, { noremap = true, silent = true })
 

@@ -31,15 +31,15 @@ vim.keymap.set("v", "E", ":m '<-2<CR>gv-gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-vim.api.nvim_set_keymap('v', '<F5>', ':w !powershell<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('v', '<F5>', ':w !powershell<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<F5>', "y:!powershell -c '<C-R>\"'<CR>'", { noremap = true, silent = true })
 
-
+vim.opt.shell = 'pwsh.exe'
 
 --Kinesis Keyboard Stuff!
 local opts = { noremap = true, silent = true }
 
 if kinesis then
-
     -- Normal mode
     vim.api.nvim_set_keymap('n', 'h', '<Left>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', 'n', '<Down>', { noremap = true, silent = true })
