@@ -15,6 +15,8 @@ Whaat if I change background color based on mode?
 
 
 Working list:
+DONE Vertical indent lines.
+DONE Add M to cycling / results.
 DONE Harpooooooooon!!
 DONE File explorer
 DONE Brainless copy paste
@@ -26,17 +28,17 @@ DONE Remap keys in nvimTree
 DONE Figure out Telescope.
 DONE Remap capital L (To be same as I) since I need I as left.
 Format on write?
+Autosave?
 DONE Open two files two tabs at the same time
-Terminal in the bottom
-NEED to be able to make changes in the file tree. Create, mkdir, delete, rename.
-Nah, don't need this. Tree sitter DUN DUN DUN
+DONE Terminal in the bottom
+DONE NEED to be able to make changes in the file tree. Create, mkdir, delete, rename.
+DONE Nah, don't need this. Tree sitter DUN DUN DUN
 DONE Harpoon looks awesome.
 DONE YAY I FIXED THE DUMB MODIFIABLE
 I need a way to bounce into a directory fast. For example, jump to Code fast from nconf. Or to a directory in Code.
 I read that Telescope can show files in a directory.
     Mine is confusing - I can't tell where it's able to search.
 DONE vim-illuminate - highlights all instances of word under cursor
-Configure vim-illuminate to cycle forward and backward.
 
 ----------------
 

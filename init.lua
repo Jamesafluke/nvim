@@ -1,6 +1,6 @@
 --Maybe look at kickstart.nvim
 
-local kinesis = false
+local kinesis = true
 
 
 vim.opt.signcolumn = 'yes'
@@ -31,6 +31,8 @@ vim.keymap.set("v", "E", ":m '<-2<CR>gv-gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+vim.api.nvim_set_keymap('v', '<F5>', ':w !powershell<CR>', { noremap = true, silent = true })
+
 
 
 --Kinesis Keyboard Stuff!
@@ -45,6 +47,7 @@ if kinesis then
     vim.api.nvim_set_keymap('n', 'i', '<Right>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', 'l', 'i', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', 'm', 'n', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('n', 'M', 'N', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('n', 'L', 'I', { noremap = true, silent = true })
 
     -- Visual mode
@@ -54,9 +57,10 @@ if kinesis then
     vim.api.nvim_set_keymap('v', 'i', '<Right>', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('v', 'l', 'i', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('v', 'm', 'n', { noremap = true, silent = true })
+    vim.api.nvim_set_keymap('v', 'M', 'M', { noremap = true, silent = true })
     vim.api.nvim_set_keymap('v', 'L', 'I', { noremap = true, silent = true })
 
-else 
+else
 
 
 
@@ -100,7 +104,10 @@ require("lazy").setup({
         { import = "plugins.fugitive" },
         { import = "plugins.harpoon" },
         { import = "plugins.zerolsp" },
-
+        { import = "plugins.indent-blankline" },
+        { import = "plugins.mason" },
+        { import = "plugins.lspconfig" },
+        { import = "plugins.mason-lspconfig" },
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.

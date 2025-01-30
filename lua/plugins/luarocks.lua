@@ -1,3 +1,4 @@
+--Don't have a clue what luarocks is for, but it's a dependency.
 return {
     {
 		"camspiers/luarocks",
