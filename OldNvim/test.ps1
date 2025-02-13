@@ -3,14 +3,19 @@ Write-Host "Testing"
 $test = "Doink"
 
 $test
-try {
+try
+{
     Write-Host $test
+} catch
+{
 }
-catch {}
-function Doink {
+function Doink
+{
     params {
         string test
-        }
+    }
 
-        }
+}
+
+
 

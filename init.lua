@@ -1,26 +1,13 @@
 local kinesis = true
 print("here we go again")
 
---[[
-
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
-      - https://learnxinyminutes.com/docs/lua/
-
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
-    - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
-
-
--- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -982,16 +969,23 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>z", function()
 				harpoon:list():select(1)
 			end)
-			vim.keymap.set("n", "<leader>z", function()
+			vim.keymap.set("n", "<leader>x", function()
 				harpoon:list():select(2)
 			end)
-			vim.keymap.set("n", "<C-n>", function()
+			vim.keymap.set("n", "<leader>c", function()
 				harpoon:list():select(3)
 			end)
-			vim.keymap.set("n", "<C-s>", function()
+			vim.keymap.set("n", "<leader>v", function()
 				harpoon:list():select(4)
 			end)
 		end,
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		---@module "ibl"
+		---@type ibl.config
+		opts = {},
 	},
 }, {
 	ui = {
