@@ -943,7 +943,22 @@ require("lazy").setup({
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-		opts = {},
+		opts = {
+			open_mapping = [[<c-\>]],
+			hide_numbers = true, -- hide the number column in toggleterm buffers
+			shade_filetypes = {},
+			autochdir = false,
+			start_in_insert = true,
+			persist_mode = false,
+			-- Change the default shell. Can be a string or a function returning a string
+			shell = vim.o.shell,
+			winbar = {
+				enabled = false,
+				name_formatter = function(term) --  term: Terminal
+					return term.name
+				end,
+			},
+		},
 	},
 }, {
 	ui = {
