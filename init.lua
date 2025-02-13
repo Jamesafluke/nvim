@@ -36,6 +36,35 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.opt.undofile = true
+
+--James Added stuff
+
+if kinesis then
+	-- Normal mode
+	vim.keymap.set("n", "h", "<Left>", { noremap = true, silent = true })
+	vim.keymap.set("n", "n", "<Down>", { noremap = true, silent = true })
+	vim.keymap.set("n", "e", "<Up>", { noremap = true, silent = true })
+	vim.keymap.set("n", "i", "<Right>", { noremap = true, silent = true })
+	vim.keymap.set("n", "l", "i", { noremap = true, silent = true })
+	vim.keymap.set("n", "m", "n", { noremap = true, silent = true })
+	vim.keymap.set("n", "M", "N", { noremap = true, silent = true })
+	vim.keymap.set("n", "L", "I", { noremap = true, silent = true })
+
+	-- Visual mode
+	vim.keymap.set("v", "h", "<Left>", { noremap = true, silent = true })
+	vim.keymap.set("v", "n", "<Down>", { noremap = true, silent = true })
+	vim.keymap.set("v", "e", "<Up>", { noremap = true, silent = true })
+	--This one is reserved deep down. I haven't tried too hard to fix. Guess I'll live with it. Why can't people respect alternate keyboard layouts?
+	--vim.keymap.set("v", "i", "<Right>", { noremap = true, silent = true })
+
+	vim.keymap.set("v", "l", "i", { noremap = true, silent = true })
+	vim.keymap.set("v", "m", "n", { noremap = true, silent = true })
+	vim.keymap.set("v", "M", "N", { noremap = true, silent = true })
+	vim.keymap.set("v", "L", "I", { noremap = true, silent = true })
+else
+end
+
 -- Convert tabs to spaces
 vim.opt.expandtab = true
 vim.wo.number = true
@@ -158,31 +187,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
-
---James Added stuff
-
-if kinesis then
-	-- Normal mode
-	vim.api.nvim_set_keymap("n", "h", "<Left>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "n", "<Down>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "e", "<Up>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "i", "<Right>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "l", "i", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "m", "n", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "M", "N", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "L", "I", { noremap = true, silent = true })
-
-	-- Visual mode
-	vim.api.nvim_set_keymap("v", "h", "<Left>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "n", "<Down>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "e", "<Up>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "i", "<Right>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "l", "i", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "m", "n", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "M", "M", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("v", "L", "I", { noremap = true, silent = true })
-else
-end
 
 --
 --
@@ -959,6 +963,35 @@ require("lazy").setup({
 				end,
 			},
 		},
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local harpoon = require("harpoon")
+
+			harpoon:setup()
+
+			vim.keymap.set("n", "<leader>a", function()
+				harpoon:list():add()
+			end)
+			vim.keymap.set("n", "<leader>r", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end)
+			vim.keymap.set("n", "<leader>z", function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set("n", "<leader>z", function()
+				harpoon:list():select(2)
+			end)
+			vim.keymap.set("n", "<C-n>", function()
+				harpoon:list():select(3)
+			end)
+			vim.keymap.set("n", "<C-s>", function()
+				harpoon:list():select(4)
+			end)
+		end,
 	},
 }, {
 	ui = {
