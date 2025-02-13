@@ -1,8 +1,7 @@
--- Highlight other occurrences of current word.
--- **Remember, Vim * jumps to next.:
-
 return {
-    {
-        'RRethy/vim-illuminate'
-    }
+	{
+		-- Highlight other occurrences of current word.
+		-- **Remember, Vim * jumps to next.:
+		"RRethy/vim-illuminate",
+	},
 }
