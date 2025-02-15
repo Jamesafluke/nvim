@@ -1,4 +1,4 @@
-local kinesis = true
+local kinesis = false
 print("here we go again")
 
 -- See `:help mapleader`
@@ -52,8 +52,11 @@ if kinesis then
 else
 end
 
--- Convert tabs to spaces
-vim.opt.expandtab = true
+vim.opt.tabstop = 4 -- Number of spaces a tab character represents
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each level of indentation
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.softtabstop = 4 -- Number of spaces inserted when pressing <Tab>
+
 vim.wo.number = true
 
 --One that lets me select and move lines up and down.
