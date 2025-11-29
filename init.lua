@@ -4,37 +4,6 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.undofile = true
 
---James Added stuff
-
-if kinesis then
-	-- Normal mode
-	vim.keymap.set("n", "h", "<Left>", { noremap = true, silent = true })
-	vim.keymap.set("n", "n", "<Down>", { noremap = true, silent = true })
-	vim.keymap.set("n", "e", "<Up>", { noremap = true, silent = true })
-	vim.keymap.set("n", "i", "<Right>", { noremap = true, silent = true })
-	vim.keymap.set("n", "l", "i", { noremap = true, silent = true })
-	vim.keymap.set("n", "m", "n", { noremap = true, silent = true })
-	vim.keymap.set("n", "M", "N", { noremap = true, silent = true })
-	vim.keymap.set("n", "L", "I", { noremap = true, silent = true })
-
-	-- Visual mode
-	vim.keymap.set("v", "h", "<Left>", { noremap = true, silent = true })
-	vim.keymap.set("v", "n", "<Down>", { noremap = true, silent = true })
-	vim.keymap.set("v", "e", "<Up>", { noremap = true, silent = true })
-	--This one is reserved deep down. I haven't tried too hard to fix. Guess I'll live with it. Why can't people respect alternate keyboard layouts?
-	--vim.keymap.set("v", "i", "<Right>", { noremap = true, silent = true })
-
-	vim.keymap.set("v", "l", "i", { noremap = true, silent = true })
-	vim.keymap.set("v", "m", "n", { noremap = true, silent = true })
-	vim.keymap.set("v", "M", "N", { noremap = true, silent = true })
-	vim.keymap.set("v", "L", "I", { noremap = true, silent = true })
-	
-
-	vim.keymap.set("v", "N", ":m '>+1<CR>gv-gv")
-	vim.keymap.set("v", "E", ":m '<-2<CR>gv-gv")
-else
-end
-
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
