@@ -1,26 +1,27 @@
-#ctl w for closing tabs
-vim.keymap.set("n", "<C-w>", "<Nop>", { silent = true })
+" Disable Ctrl-w for closing tabs/windows
+nnoremap <C-w> <Nop>
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.undofile = true
+" Line numbers
+set number
+set relativenumber
 
---Indent selected lines but stay selected.
-local opts = { noremap = true, silent = true }
-vim.keymap.set('v', '>', '>gv', opts)
-vim.keymap.set('v', '<', '<gv', opts)
+" Persistent undo
+set undofile
 
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
+" Indent visually selected lines and keep selection
+vnoremap > >gv
+vnoremap < <gv
 
---Keep cursor centered while jumping.
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+" System clipboard integration (use + register on Linux/X11, * on some systems)
+set clipboard=unnamedplus
 
+" Keep cursor centered on half-page jumps
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+" Search options
+set ignorecase
+set smartcase
 
-
-vim.opt.scrolloff = 18
+" Lines to keep visible above/below cursor
+set scrolloff=18
