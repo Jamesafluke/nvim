@@ -15,3 +15,10 @@
 
 ### Windows Install
 winget install --id=Neovim.Neovim  -e
+
+
+
+### Misc
+Ctrl Backspace in bash (in Ubuntu at least):
+"\C-h": backward-kill-word
+in ~/.inputrc
