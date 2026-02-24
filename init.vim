@@ -1,5 +1,23 @@
-" Disable Ctrl-w for closing tabs/windows
-nnoremap <C-w> <Nop>
+" Note: I don't remember if there's a good reason I'm using init.vim instead
+" of init.lua. It might have been for VS compatability since I don't think it
+" plays well with nvim. But then, I didn't even start using VS. I just swapped
+" to Rider. So if I don't find a good reason my 4/26 or whenever, swap back to
+" init.lua. -2/23/26
+
+call plug#begin('~/.vim/plugged')   " or any folder you like
+" ... your other plugins here ...
+Plug 'nyoom-engineering/oxocarbon.nvim'
+call plug#end()
+
+
+
+
+" Ctrl + Backspace → delete previous word
+inoremap <C-BS> <C-w>
+cnoremap <C-BS> <C-w>
+
+" Ctrl + Delete → delete next word
+inoremap <C-Del> <C-o>dw
 
 " Line numbers
 set number
