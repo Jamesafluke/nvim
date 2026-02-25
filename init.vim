@@ -12,6 +12,10 @@ call plug#end()
 
 
 
+" Increment and decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
 " Ctrl + Backspace → delete previous word
 inoremap <C-BS> <C-w>
 cnoremap <C-BS> <C-w>
