@@ -13,3 +13,16 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
+
+
+--Telescope stuff:
+local builtin = require('telescope.builtin')
+
+-- Telescope stuff: Deferring the require calls to prevent startup errors
+-- The Big Three basics:
+vim.keymap.set('n', '<leader>ff', function() require('telescope.builtin').find_files() end, { desc = 'Telescope Find Files' })
+vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_grep() end, { desc = 'Telescope Live Grep' })
+vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, { desc = 'Telescope Buffers' })
+-- A couple more highly useful ones:
+vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = 'Telescope Help Tags' })
+vim.keymap.set('n', '<leader>fs', function() require('telescope.builtin').git_files() end, { desc = 'Telescope Git Files' })

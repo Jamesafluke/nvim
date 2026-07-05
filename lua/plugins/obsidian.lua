@@ -4,12 +4,13 @@ return {
   -- Only load when you're in your notes folder
   event = {
     "BufReadPre " .. vim.fn.expand("~") .. "/notes/**.md",
-    "BufNewFile "  .. vim.fn.expand("~") .. "/notes/**.md",
+    "BufNewFile " .. vim.fn.expand("~") .. "/notes/**.md",
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",  -- for note picker
-    "hrsh7th/nvim-cmp",              -- for [[wikilink]] completion
+    "nvim-telescope/telescope.nvim", -- for note picker
+    "hrsh7th/nvim-cmp",             -- completion engine
+    "hrsh7th/cmp-nvim-lsp",         -- REQUIRED: Added to support the new built-in LSP completion
   },
   ---@module 'obsidian'
   ---@type obsidian.config.ClientOpts
@@ -44,7 +45,7 @@ return {
     daily_notes = {
       folder = "daily",
       date_format = "%Y-%m-%d",
-      template = nil,  -- set to "daily.md" if you make templates
+      template = nil, -- set to "daily.md" if you make templates
     },
 
     -- Templates folder
@@ -52,30 +53,28 @@ return {
       subdir = "templates",
     },
 
-    -- Follow [[links]] with gf
-    follow_url_func = function(url)
-      vim.fn.jobstart({ "xdg-open", url })  -- Linux; swap for "open" on macOS
-    end,
-
-    -- Completion for [[wikilinks]] and tags
-    completion = {
-      nvim_cmp = true,
-      min_chars = 2,
-    },
+    -- REMOVED: follow_url_func (Now handled natively by Neovim using vim.ui.open)
 
     ui = {
       enable = true,
-      checkboxes = {
-        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-        ["x"] = { char = "", hl_group = "ObsidianDone" },
-        [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-        ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-      },
+        enabled = true,
+        -- Set the exact order you want to cycle through
+        order = { " ", "x", "~", "!", ">" },
+        -- Set to true if you want to spawn new checkboxes on paragraphs
+        create_new = true, 
     },
   },
 
   config = function(_, opts)
     require("obsidian").setup(opts)
+	local cmp_ok, cmp = pcall(require, "cmp")
+	if cmp_ok then
+	  cmp.setup.filetype("markdown", {
+		sources = {
+		  { name = "nvim_lsp" },
+		},
+	  })
+	end
 
     -- Obsidian-specific keymaps (only meaningful in notes)
     local map = function(keys, cmd, desc)
@@ -85,17 +84,17 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "markdown",
       callback = function()
-        map("<leader>on", "<cmd>ObsidianNew<cr>",          "New note")
-        map("<leader>oo", "<cmd>ObsidianOpen<cr>",         "Open in Obsidian app")
-        map("<leader>os", "<cmd>ObsidianSearch<cr>",       "Search notes")
-        map("<leader>oq", "<cmd>ObsidianQuickSwitch<cr>",  "Quick switch note")
-        map("<leader>ol", "<cmd>ObsidianLinks<cr>",        "List links")
-        map("<leader>ob", "<cmd>ObsidianBacklinks<cr>",    "Backlinks")
-        map("<leader>ot", "<cmd>ObsidianTags<cr>",         "Tags")
-        map("<leader>od", "<cmd>ObsidianDailies<cr>",      "Daily notes")
-        map("<leader>oT", "<cmd>ObsidianTemplate<cr>",     "Insert template")
-        map("<leader>or", "<cmd>ObsidianRename<cr>",       "Rename note")
-        map("<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>","Toggle checkbox")
+        map("<leader>on", "<cmd>ObsidianNew<cr>", "New note")
+        map("<leader>oo", "<cmd>ObsidianOpen<cr>", "Open in Obsidian app")
+        map("<leader>os", "<cmd>ObsidianSearch<cr>", "Search notes")
+        map("<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", "Quick switch note")
+        map("<leader>ol", "<cmd>ObsidianLinks<cr>", "List links")
+        map("<leader>ob", "<cmd>ObsidianBacklinks<cr>", "Backlinks")
+        map("<leader>ot", "<cmd>ObsidianTags<cr>", "Tags")
+        map("<leader>od", "<cmd>ObsidianDailies<cr>", "Daily notes")
+        map("<leader>oT", "<cmd>ObsidianTemplate<cr>", "Insert template")
+        map("<leader>or", "<cmd>ObsidianRename<cr>", "Rename note")
+        map("<leader>oc", "<cmd>ObsidianToggleCheckbox<cr>", "Toggle checkbox")
       end,
     })
   end,

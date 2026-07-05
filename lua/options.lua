@@ -10,3 +10,10 @@ vim.opt.background = "dark"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.conceallevel = 2
+
+--Setting at the time I (try to) start using Telescope (again).
+vim.g.mapleader = " "
+
+--Telescope stuff:
+local builtin = require('telescope.builtin')
+

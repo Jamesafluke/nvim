@@ -1,5 +1,5 @@
-require("options")
-require("keymaps")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -14,6 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-if not vim.g.vscode then
-  require("lazy").setup("plugins")  -- auto-loads all files in lua/plugins/
-end
+require("lazy").setup("plugins")
+
+require("options")
+require("keymaps")
