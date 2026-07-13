@@ -1,4 +1,6 @@
-#Note: This is intended to be copy-pasted into vscode's nvim config file. And yes, there will probably be drift.
+--Note: This is intended to be copy-pasted into vscode's nvim config file. And yes, there will probably be drift.
+--Created this Jul 2026 for a VDI.
+
 
 vim.o.autowriteall = true
 vim.opt.number = true
