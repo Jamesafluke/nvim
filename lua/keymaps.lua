@@ -26,3 +26,15 @@ vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffer
 -- A couple more highly useful ones:
 vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, { desc = 'Telescope Help Tags' })
 vim.keymap.set('n', '<leader>fs', function() require('telescope.builtin').git_files() end, { desc = 'Telescope Git Files' })
+
+
+-- Window Splitting & Navigation:
+-- Split windows vertically or horizontally
+vim.keymap.set("n", "<leader>v", "<cmd>vsplit<cr>", { desc = "Split Window Vertically" })
+vim.keymap.set("n", "<leader>h", "<cmd>split<cr>", { desc = "Split Window Horizontally" })
+
+-- Easy navigation between splits (Hold Ctrl + direction)
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
