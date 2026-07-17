@@ -17,3 +17,13 @@ vim.g.mapleader = " "
 --Telescope stuff:
 local builtin = require('telescope.builtin')
 
+
+-- For the cyan cursor
+vim.opt.termguicolors = true
+-- Define a Neon Teal color group (#00F5D4 is a classic bright neon teal)
+vim.api.nvim_set_hl(0, "NeonTealCursor", { bg = "#00F5D4", fg = "#000000" })
+
+-- Tell Neovim to use this highlight group for your cursor
+-- n-v-c = Normal, Visual, Command modes (Block cursor)
+-- i-ci = Insert, Command-line Insert modes (Vertical bar cursor)
+vim.opt.guicursor = "n-v-c:block-NeonTealCursor,i-ci:ver25-NeonTealCursor"
